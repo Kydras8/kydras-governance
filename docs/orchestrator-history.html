@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kydras Orchestrator Deployment History</title>
+  <style>
+    body { font-family: Arial; padding: 2rem; background: #fdfdfd; }
+    h1 { color: #2c3e50; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+    th { background-color: #2980b9; color: white; }
+    .tagline { color: #caa800; font-weight: bold; margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>🧭 Kydras Orchestrator Deployment History</h1>
+  <div class="tagline">EVERY REPO. EVERY DASHBOARD. EVERY TIME.</div>
+  <table id="deployTable">
+    <thead>
+      <tr><th>Repo</th><th>Timestamp</th><th>Commit</th><th>Dashboard</th><th>Appendix</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    fetch("../logs/deployment_log.json")
+      .then(res => res.json())
+      .then(log => {
+        const tbody = document.querySelector("#deployTable tbody");
+        log.forEach(entry => {
+          const repo = entry.repo;
+          const row = document.createElement("tr");
+          row.innerHTML = `<td>${repo}</td><td>${entry.timestamp}</td><td>${entry.commit}</td><td><a href="https://kydras8.github.io/${repo}/trends.html">Dashboard</a></td><td><a href="https://kydras8.github.io/${repo}/appendix.html">Appendix</a></td>`;
+          tbody.appendChild(row);
+        });
+      });
+  </script>
+</body>
+</html>
