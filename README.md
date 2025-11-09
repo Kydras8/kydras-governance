@@ -29,3 +29,5 @@ graph TD
     B --> C[GitHub Pages]
     C --> D[Executive Dashboard]
     A --> E[docs/history/*.html]
+
+[![Kydras Sync](https://github.com/kydras-systems/kydras-governance/actions/workflows/kydras-sync-matrix.yml/badge.svg)](https://github.com/kydras-systems/kydras-governance/actions/workflows/kydras-sync-matrix.yml)

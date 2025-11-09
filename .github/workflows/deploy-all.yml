@@ -1,0 +1,32 @@
+name: Deploy All Compliance Dashboards
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo: [kydras-compliance-service, kydras-governance, kydras-onboarding]
+    steps:
+      - name: Checkout Governance Repo
+        uses: actions/checkout@v3
+        with:
+          repository: kydras8/${{ matrix.repo }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Validate Dashboard
+        run: |
+          test -s docs/trends.html
+          test -s docs/appendix.html
+      - name: Deploy GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs
+      - name: Post Slack Alert
+        run: |
+          curl -X POST -H "Content-type: application/json" --data "{\"text\":\"✅ Deployed `${{ matrix.repo }}` dashboard\n🔗 https://kydras8.github.io/${{ matrix.repo }}/trends.html\"}" ${{ secrets.SLACK_WEBHOOK }}
+      - name: Log Deployment
+        run: |
+          echo "{ \"repo\": \"${{ matrix.repo }}\", \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\", \"commit\": \"$(git rev-parse --short HEAD)\" }" >> deployment_log.json
