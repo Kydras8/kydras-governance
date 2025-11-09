@@ -31,3 +31,6 @@ graph TD
     A --> E[docs/history/*.html]
 
 [![Kydras Sync](https://github.com/kydras-systems/kydras-governance/actions/workflows/kydras-sync-matrix.yml/badge.svg)](https://github.com/kydras-systems/kydras-governance/actions/workflows/kydras-sync-matrix.yml)
+
+📜 [Kydras Prime Directive](KYDRAS_PRIME_DIRECTIVE.md)
+
