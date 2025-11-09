@@ -3,6 +3,7 @@
 [![Compliance Dashboard](https://img.shields.io/badge/Kydras-Dashboard-blue?style=for-the-badge&logo=github)](https://kydras8.github.io/kydras-governance/)
 [![Deploy Dashboard](https://github.com/Kydras8/kydras-governance/actions/workflows/deploy-dashboard.yml/badge.svg)](https://github.com/Kydras8/kydras-governance/actions/workflows/deploy-dashboard.yml)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![Deploy Dashboard](https://github.com/Kydras8/kydras-governance/actions/workflows/deploy-dashboard.yml/badge.svg)](https://github.com/Kydras8/kydras-governance/actions/workflows/deploy-dashboard.yml)
 
 ---
 
