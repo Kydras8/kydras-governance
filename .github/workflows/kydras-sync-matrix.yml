@@ -1,0 +1,32 @@
+name: Kydras Multi-Repo Sync
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        repo:
+          - kydras-compliance-service
+          - kydras-governance
+          - kydras-onboarding
+          - kydras-archive/legacy-compliance
+          - kydras-nested/submodule-diagnostics
+
+    steps:
+      - name: Checkout orchestration repo
+        uses: actions/checkout@v3
+        with:
+          repository: kydras-systems/kydras-governance
+          token: \$\{{ secrets.PAT }}
+
+      - name: Run git-sync.ps1 for \$\{{ matrix.repo }}
+        shell: pwsh
+        run: |
+          \ = '\$\{{ secrets.PAT }}'
+          \C:\Users\kyler\kydras-governance = "\C:\Users\kyler/\$\{{ matrix.repo }}"
+          irm -Headers @{ Authorization = "token \" } https://raw.githubusercontent.com/kydras-systems/kydras-governance/main/git-sync.ps1 | iex
