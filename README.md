@@ -1,7 +1,7 @@
 # 🛡️ Kydras Governance Dashboard
 
 [![Compliance Dashboard](https://img.shields.io/badge/Kydras-Dashboard-blue?style=for-the-badge&logo=github)](https://kydras8.github.io/kydras-governance/)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Kydras8/kydras-governance/deploy-dashboard.yml?style=for-the-badge&logo=githubactions)](https://github.com/Kydras8/kydras-governance/actions)
+[![Deploy Dashboard](https://github.com/Kydras8/kydras-governance/actions/workflows/deploy-dashboard.yml/badge.svg)](https://github.com/Kydras8/kydras-governance/actions/workflows/deploy-dashboard.yml)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 ---
@@ -28,4 +28,3 @@ graph TD
     B --> C[GitHub Pages]
     C --> D[Executive Dashboard]
     A --> E[docs/history/*.html]
-****
