@@ -1,3 +1,11 @@
+<!-- Kydras Repo Header -->
+<p align="center">
+  <strong>Kydras Systems Inc.</strong><br/>
+  <em>Nothing is off limits.</em>
+</p>
+
+---
+
 # 🛡️ Kydras Governance Dashboard
 
 [![Compliance Dashboard](https://img.shields.io/badge/Kydras-Dashboard-blue?style=for-the-badge&logo=github)](https://kydras8.github.io/kydras-governance/)
@@ -33,4 +41,5 @@ graph TD
 [![Kydras Sync](https://github.com/kydras-systems/kydras-governance/actions/workflows/kydras-sync-matrix.yml/badge.svg)](https://github.com/kydras-systems/kydras-governance/actions/workflows/kydras-sync-matrix.yml)
 
 📜 [Kydras Prime Directive](KYDRAS_PRIME_DIRECTIVE.md)
+
 
